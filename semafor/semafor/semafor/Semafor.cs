@@ -18,7 +18,7 @@ namespace semafor
         public bool silazno { get; set; }
         public void PromijeniStanje()
         {
-
+            if ()
         }
         public string DohvatiTrenutnoStanje()
         {
