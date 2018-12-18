@@ -12,9 +12,11 @@ namespace getCountries
 {
     public partial class Form1 : Form
     {
+        private Country country;
         public Form1()
         {
             InitializeComponent();
+            country = new Country();
         }
     }
 }
