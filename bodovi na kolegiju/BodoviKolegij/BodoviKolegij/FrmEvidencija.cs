@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BodoviKolegij
 {
-    public partial class Form1 : Form
+    public partial class FrmEvidencija : Form
     {
-        public Form1()
+        public FrmEvidencija()
         {
             InitializeComponent();
         }
