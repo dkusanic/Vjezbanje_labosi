@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,7 +43,15 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bodoviDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maxBodoviDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uspjehDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.predmetiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.predmetiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.predmetiBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.predmetiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
@@ -52,6 +61,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(146, 95);
             this.listBox1.TabIndex = 0;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -78,6 +88,7 @@
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(146, 95);
             this.listBox2.TabIndex = 3;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -124,6 +135,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Dodaj";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -133,6 +145,7 @@
             this.button2.TabIndex = 10;
             this.button2.Text = "Dodaj";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -142,6 +155,7 @@
             this.button3.TabIndex = 11;
             this.button3.Text = "Spremi";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label4
             // 
@@ -154,13 +168,55 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nazivDataGridViewTextBoxColumn,
+            this.bodoviDataGridViewTextBoxColumn,
+            this.maxBodoviDataGridViewTextBoxColumn,
+            this.uspjehDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.predmetiBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(12, 226);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(776, 212);
             this.dataGridView1.TabIndex = 13;
             // 
-            // Form1
+            // nazivDataGridViewTextBoxColumn
+            // 
+            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "Naziv";
+            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
+            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            // 
+            // bodoviDataGridViewTextBoxColumn
+            // 
+            this.bodoviDataGridViewTextBoxColumn.DataPropertyName = "Bodovi";
+            this.bodoviDataGridViewTextBoxColumn.HeaderText = "Bodovi";
+            this.bodoviDataGridViewTextBoxColumn.Name = "bodoviDataGridViewTextBoxColumn";
+            this.bodoviDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // maxBodoviDataGridViewTextBoxColumn
+            // 
+            this.maxBodoviDataGridViewTextBoxColumn.DataPropertyName = "MaxBodovi";
+            this.maxBodoviDataGridViewTextBoxColumn.HeaderText = "MaxBodovi";
+            this.maxBodoviDataGridViewTextBoxColumn.Name = "maxBodoviDataGridViewTextBoxColumn";
+            this.maxBodoviDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // uspjehDataGridViewTextBoxColumn
+            // 
+            this.uspjehDataGridViewTextBoxColumn.DataPropertyName = "Uspjeh";
+            this.uspjehDataGridViewTextBoxColumn.HeaderText = "Uspjeh";
+            this.uspjehDataGridViewTextBoxColumn.Name = "uspjehDataGridViewTextBoxColumn";
+            this.uspjehDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // predmetiBindingSource1
+            // 
+            this.predmetiBindingSource1.DataSource = typeof(BodoviKolegij.Predmeti);
+            // 
+            // predmetiBindingSource
+            // 
+            this.predmetiBindingSource.DataSource = typeof(BodoviKolegij.Predmeti);
+            // 
+            // FrmEvidencija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -179,9 +235,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
-            this.Name = "Form1";
+            this.Name = "FrmEvidencija";
             this.Text = "Evidencija";
+            this.Load += new System.EventHandler(this.FrmEvidencija_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.predmetiBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.predmetiBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,6 +262,12 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource predmetiBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bodoviDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maxBodoviDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uspjehDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource predmetiBindingSource1;
     }
 }
 

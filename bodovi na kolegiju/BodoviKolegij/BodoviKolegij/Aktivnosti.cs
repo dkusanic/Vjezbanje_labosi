@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace BodoviKolegij
 {
-    class Aktivnosti
+    public class Aktivnosti
     {
         public string Naziv { get; set; }
         public int Bodovi { get; set; }
         public int MaxBodovi { get; set; }
-        public Predmeti p { get; set; }
-        Aktivnosti()
+        public Aktivnosti(string naziv, int maxBodovi)
         {
-
+            Naziv = naziv;
+            MaxBodovi = maxBodovi;
         }
     }
 }
