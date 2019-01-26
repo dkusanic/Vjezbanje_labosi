@@ -46,5 +46,11 @@ namespace boje2
             var source = new BindingSource(list, null);
             dataGridView1.DataSource = source;
         }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            MyColor currentObject = (MyColor)dataGridView1.CurrentRow.DataBoundItem;
+            panelColor.BackColor = Color.FromArgb(currentObject.Red, currentObject.Green, currentObject.Blue);
+        }
     }
 }
