@@ -37,5 +37,14 @@ namespace boje2
         {
             panelColor.BackColor = Color.FromArgb((int)numericUpDown1.Value, (int)numericUpDown2.Value, (int)numericUpDown3.Value);
         }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            MyColor boja = new MyColor((int)numericUpDown1.Value, (int)numericUpDown2.Value, (int)numericUpDown3.Value, textBoxName.Text.ToString());
+            colors.Add(boja);
+            var list = new BindingList<MyColor>(colors);
+            var source = new BindingSource(list, null);
+            dataGridView1.DataSource = source;
+        }
     }
 }
