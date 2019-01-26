@@ -10,9 +10,10 @@ using System.Windows.Forms;
 
 namespace guess
 {
-    public partial class Form1 : Form
+    public partial class FormGuessGame : Form
     {
-        public Form1()
+        GuessGame igra = new GuessGame();
+        public FormGuessGame()
         {
             InitializeComponent();
         }

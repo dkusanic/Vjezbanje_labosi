@@ -1,6 +1,6 @@
 ﻿namespace guess
 {
-    partial class Form1
+    partial class FormGuessGame
     {
         /// <summary>
         /// Required designer variable.
@@ -29,176 +29,176 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.groupBoxGenerirani = new System.Windows.Forms.GroupBox();
+            this.textBoxGen5 = new System.Windows.Forms.TextBox();
+            this.textBoxGen4 = new System.Windows.Forms.TextBox();
+            this.textBoxGen3 = new System.Windows.Forms.TextBox();
+            this.textBoxGen2 = new System.Windows.Forms.TextBox();
+            this.textBoxGen1 = new System.Windows.Forms.TextBox();
+            this.groupBoxUnos = new System.Windows.Forms.GroupBox();
+            this.textBoxUnos5 = new System.Windows.Forms.TextBox();
+            this.textBoxUnos4 = new System.Windows.Forms.TextBox();
+            this.textBoxUnos1 = new System.Windows.Forms.TextBox();
+            this.textBoxUnos3 = new System.Windows.Forms.TextBox();
+            this.textBoxUnos2 = new System.Windows.Forms.TextBox();
+            this.buttonNova = new System.Windows.Forms.Button();
+            this.buttonProvjera = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBoxGenerirani.SuspendLayout();
+            this.groupBoxUnos.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBoxGenerirani
             // 
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(35, 36);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(308, 63);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Generirani brojevi:";
+            this.groupBoxGenerirani.Controls.Add(this.textBoxGen5);
+            this.groupBoxGenerirani.Controls.Add(this.textBoxGen4);
+            this.groupBoxGenerirani.Controls.Add(this.textBoxGen3);
+            this.groupBoxGenerirani.Controls.Add(this.textBoxGen2);
+            this.groupBoxGenerirani.Controls.Add(this.textBoxGen1);
+            this.groupBoxGenerirani.Location = new System.Drawing.Point(35, 36);
+            this.groupBoxGenerirani.Name = "groupBoxGenerirani";
+            this.groupBoxGenerirani.Size = new System.Drawing.Size(308, 63);
+            this.groupBoxGenerirani.TabIndex = 0;
+            this.groupBoxGenerirani.TabStop = false;
+            this.groupBoxGenerirani.Text = "Generirani brojevi:";
             // 
-            // groupBox2
+            // textBoxGen5
             // 
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox10);
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.textBox9);
-            this.groupBox2.Location = new System.Drawing.Point(41, 105);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(305, 81);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Unos brojeva:";
+            this.textBoxGen5.Location = new System.Drawing.Point(238, 19);
+            this.textBoxGen5.Name = "textBoxGen5";
+            this.textBoxGen5.Size = new System.Drawing.Size(52, 20);
+            this.textBoxGen5.TabIndex = 4;
             // 
-            // button1
+            // textBoxGen4
             // 
-            this.button1.Location = new System.Drawing.Point(84, 192);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 30);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Nova igra";
-            this.button1.UseVisualStyleBackColor = true;
+            this.textBoxGen4.Location = new System.Drawing.Point(180, 19);
+            this.textBoxGen4.Name = "textBoxGen4";
+            this.textBoxGen4.Size = new System.Drawing.Size(52, 20);
+            this.textBoxGen4.TabIndex = 3;
             // 
-            // button2
+            // textBoxGen3
             // 
-            this.button2.Location = new System.Drawing.Point(191, 192);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 30);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Provjera";
-            this.button2.UseVisualStyleBackColor = true;
+            this.textBoxGen3.Location = new System.Drawing.Point(122, 19);
+            this.textBoxGen3.Name = "textBoxGen3";
+            this.textBoxGen3.Size = new System.Drawing.Size(52, 20);
+            this.textBoxGen3.TabIndex = 2;
             // 
-            // textBox1
+            // textBoxGen2
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(52, 20);
-            this.textBox1.TabIndex = 0;
+            this.textBoxGen2.Location = new System.Drawing.Point(64, 19);
+            this.textBoxGen2.Name = "textBoxGen2";
+            this.textBoxGen2.Size = new System.Drawing.Size(52, 20);
+            this.textBoxGen2.TabIndex = 1;
             // 
-            // textBox2
+            // textBoxGen1
             // 
-            this.textBox2.Location = new System.Drawing.Point(64, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(52, 20);
-            this.textBox2.TabIndex = 1;
+            this.textBoxGen1.Location = new System.Drawing.Point(6, 19);
+            this.textBoxGen1.Name = "textBoxGen1";
+            this.textBoxGen1.Size = new System.Drawing.Size(52, 20);
+            this.textBoxGen1.TabIndex = 0;
             // 
-            // textBox3
+            // groupBoxUnos
             // 
-            this.textBox3.Location = new System.Drawing.Point(122, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(52, 20);
-            this.textBox3.TabIndex = 2;
+            this.groupBoxUnos.Controls.Add(this.textBoxUnos5);
+            this.groupBoxUnos.Controls.Add(this.textBoxUnos4);
+            this.groupBoxUnos.Controls.Add(this.textBoxUnos1);
+            this.groupBoxUnos.Controls.Add(this.textBoxUnos3);
+            this.groupBoxUnos.Controls.Add(this.textBoxUnos2);
+            this.groupBoxUnos.Location = new System.Drawing.Point(41, 105);
+            this.groupBoxUnos.Name = "groupBoxUnos";
+            this.groupBoxUnos.Size = new System.Drawing.Size(305, 81);
+            this.groupBoxUnos.TabIndex = 1;
+            this.groupBoxUnos.TabStop = false;
+            this.groupBoxUnos.Text = "Unos brojeva:";
             // 
-            // textBox4
+            // textBoxUnos5
             // 
-            this.textBox4.Location = new System.Drawing.Point(180, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(52, 20);
-            this.textBox4.TabIndex = 3;
+            this.textBoxUnos5.Location = new System.Drawing.Point(235, 32);
+            this.textBoxUnos5.Name = "textBoxUnos5";
+            this.textBoxUnos5.Size = new System.Drawing.Size(52, 20);
+            this.textBoxUnos5.TabIndex = 9;
             // 
-            // textBox5
+            // textBoxUnos4
             // 
-            this.textBox5.Location = new System.Drawing.Point(238, 19);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(52, 20);
-            this.textBox5.TabIndex = 4;
+            this.textBoxUnos4.Location = new System.Drawing.Point(177, 32);
+            this.textBoxUnos4.Name = "textBoxUnos4";
+            this.textBoxUnos4.Size = new System.Drawing.Size(52, 20);
+            this.textBoxUnos4.TabIndex = 8;
             // 
-            // textBox6
+            // textBoxUnos1
             // 
-            this.textBox6.Location = new System.Drawing.Point(235, 32);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(52, 20);
-            this.textBox6.TabIndex = 9;
+            this.textBoxUnos1.Location = new System.Drawing.Point(3, 32);
+            this.textBoxUnos1.Name = "textBoxUnos1";
+            this.textBoxUnos1.Size = new System.Drawing.Size(52, 20);
+            this.textBoxUnos1.TabIndex = 5;
             // 
-            // textBox7
+            // textBoxUnos3
             // 
-            this.textBox7.Location = new System.Drawing.Point(177, 32);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(52, 20);
-            this.textBox7.TabIndex = 8;
+            this.textBoxUnos3.Location = new System.Drawing.Point(119, 32);
+            this.textBoxUnos3.Name = "textBoxUnos3";
+            this.textBoxUnos3.Size = new System.Drawing.Size(52, 20);
+            this.textBoxUnos3.TabIndex = 7;
             // 
-            // textBox8
+            // textBoxUnos2
             // 
-            this.textBox8.Location = new System.Drawing.Point(119, 32);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(52, 20);
-            this.textBox8.TabIndex = 7;
+            this.textBoxUnos2.Location = new System.Drawing.Point(61, 32);
+            this.textBoxUnos2.Name = "textBoxUnos2";
+            this.textBoxUnos2.Size = new System.Drawing.Size(52, 20);
+            this.textBoxUnos2.TabIndex = 6;
             // 
-            // textBox9
+            // buttonNova
             // 
-            this.textBox9.Location = new System.Drawing.Point(61, 32);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(52, 20);
-            this.textBox9.TabIndex = 6;
+            this.buttonNova.Location = new System.Drawing.Point(84, 192);
+            this.buttonNova.Name = "buttonNova";
+            this.buttonNova.Size = new System.Drawing.Size(88, 30);
+            this.buttonNova.TabIndex = 2;
+            this.buttonNova.Text = "Nova igra";
+            this.buttonNova.UseVisualStyleBackColor = true;
             // 
-            // textBox10
+            // buttonProvjera
             // 
-            this.textBox10.Location = new System.Drawing.Point(3, 32);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(52, 20);
-            this.textBox10.TabIndex = 5;
+            this.buttonProvjera.Location = new System.Drawing.Point(191, 192);
+            this.buttonProvjera.Name = "buttonProvjera";
+            this.buttonProvjera.Size = new System.Drawing.Size(93, 30);
+            this.buttonProvjera.TabIndex = 3;
+            this.buttonProvjera.Text = "Provjera";
+            this.buttonProvjera.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // FormGuessGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(381, 273);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
+            this.Controls.Add(this.buttonProvjera);
+            this.Controls.Add(this.buttonNova);
+            this.Controls.Add(this.groupBoxUnos);
+            this.Controls.Add(this.groupBoxGenerirani);
+            this.Name = "FormGuessGame";
             this.Text = "Guess game";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBoxGenerirani.ResumeLayout(false);
+            this.groupBoxGenerirani.PerformLayout();
+            this.groupBoxUnos.ResumeLayout(false);
+            this.groupBoxUnos.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBoxGenerirani;
+        private System.Windows.Forms.TextBox textBoxGen5;
+        private System.Windows.Forms.TextBox textBoxGen4;
+        private System.Windows.Forms.TextBox textBoxGen3;
+        private System.Windows.Forms.TextBox textBoxGen2;
+        private System.Windows.Forms.TextBox textBoxGen1;
+        private System.Windows.Forms.GroupBox groupBoxUnos;
+        private System.Windows.Forms.TextBox textBoxUnos5;
+        private System.Windows.Forms.TextBox textBoxUnos4;
+        private System.Windows.Forms.TextBox textBoxUnos1;
+        private System.Windows.Forms.TextBox textBoxUnos3;
+        private System.Windows.Forms.TextBox textBoxUnos2;
+        private System.Windows.Forms.Button buttonNova;
+        private System.Windows.Forms.Button buttonProvjera;
         private System.Windows.Forms.Timer timer1;
     }
 }
