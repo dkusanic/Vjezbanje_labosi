@@ -105,6 +105,7 @@
             this.textBoxRed.Name = "textBoxRed";
             this.textBoxRed.Size = new System.Drawing.Size(100, 20);
             this.textBoxRed.TabIndex = 4;
+            this.textBoxRed.Text = "0";
             // 
             // textBoxGreen
             // 
@@ -112,6 +113,7 @@
             this.textBoxGreen.Name = "textBoxGreen";
             this.textBoxGreen.Size = new System.Drawing.Size(100, 20);
             this.textBoxGreen.TabIndex = 5;
+            this.textBoxGreen.Text = "0";
             // 
             // textBoxBlue
             // 
@@ -119,6 +121,7 @@
             this.textBoxBlue.Name = "textBoxBlue";
             this.textBoxBlue.Size = new System.Drawing.Size(100, 20);
             this.textBoxBlue.TabIndex = 6;
+            this.textBoxBlue.Text = "0";
             // 
             // textBoxName
             // 
@@ -135,6 +138,7 @@
             this.buttonAdd.TabIndex = 8;
             this.buttonAdd.Text = "Add color";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // groupBox2
             // 
