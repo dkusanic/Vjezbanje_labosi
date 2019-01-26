@@ -32,7 +32,7 @@ namespace boje
             {
                 Panel p = new Panel();
                 p.Size = new Size(15,15);
-                p.Location = new Point(15 * i, 20);
+                p.Location = new Point(17 * i, 20);
                 p.BackColor = listaBoja[i];
                 bojeUListiGrpbx.Controls.Add(p);
             }
