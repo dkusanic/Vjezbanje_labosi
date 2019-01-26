@@ -154,6 +154,7 @@
             this.buttonNova.TabIndex = 2;
             this.buttonNova.Text = "Nova igra";
             this.buttonNova.UseVisualStyleBackColor = true;
+            this.buttonNova.Click += new System.EventHandler(this.buttonNova_Click);
             // 
             // buttonProvjera
             // 
@@ -163,6 +164,10 @@
             this.buttonProvjera.TabIndex = 3;
             this.buttonProvjera.Text = "Provjera";
             this.buttonProvjera.UseVisualStyleBackColor = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
             // 
             // FormGuessGame
             // 
