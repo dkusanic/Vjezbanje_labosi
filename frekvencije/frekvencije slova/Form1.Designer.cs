@@ -28,13 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.textBoxUnos = new System.Windows.Forms.TextBox();
+            this.textBoxIspis = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // textBoxUnos
+            // 
+            this.textBoxUnos.Location = new System.Drawing.Point(12, 12);
+            this.textBoxUnos.Multiline = true;
+            this.textBoxUnos.Name = "textBoxUnos";
+            this.textBoxUnos.Size = new System.Drawing.Size(480, 426);
+            this.textBoxUnos.TabIndex = 0;
+            this.textBoxUnos.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // textBoxIspis
+            // 
+            this.textBoxIspis.Location = new System.Drawing.Point(498, 12);
+            this.textBoxIspis.Multiline = true;
+            this.textBoxIspis.Name = "textBoxIspis";
+            this.textBoxIspis.ReadOnly = true;
+            this.textBoxIspis.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxIspis.Size = new System.Drawing.Size(170, 426);
+            this.textBoxIspis.TabIndex = 1;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(687, 450);
+            this.Controls.Add(this.textBoxIspis);
+            this.Controls.Add(this.textBoxUnos);
+            this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "PI FOI";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox textBoxUnos;
+        private System.Windows.Forms.TextBox textBoxIspis;
     }
 }
 
