@@ -22,15 +22,19 @@ namespace boje3
         {
             PiColor boja = new PiColor(int.Parse(textBoxRed.Text), int.Parse(textBoxGreen.Text), int.Parse(textBoxBlue.Text), textBoxName.Text.ToString());
             listaBoja.Add(boja);
-            List<string> lista = new List<string>();
-            foreach (PiColor b in listaBoja)
-            {
-                var naziv = b.Name;
-                lista.Add(naziv);
-            }
-            var list = new BindingList<string>(lista);
+            var list = new BindingList<PiColor>(listaBoja);
             var source = new BindingSource(list, null);
             comboBoxBoje.DataSource = source;
+            comboBoxBoje.DisplayMember = "Name";
+        }
+
+        private void comboBoxBoje_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for(int i=0; i<listaBoja.Count; i++)
+            {
+                if (listaBoja[i] == listaBoja[comboBoxBoje.SelectedIndex])
+                    panelOdabranaBoja.BackColor = Color.FromArgb(listaBoja[comboBoxBoje.SelectedIndex].Red, listaBoja[comboBoxBoje.SelectedIndex].Green, listaBoja[comboBoxBoje.SelectedIndex].Blue);
+            }
         }
     }
 }

@@ -158,6 +158,7 @@
             this.comboBoxBoje.Name = "comboBoxBoje";
             this.comboBoxBoje.Size = new System.Drawing.Size(164, 21);
             this.comboBoxBoje.TabIndex = 0;
+            this.comboBoxBoje.SelectedIndexChanged += new System.EventHandler(this.comboBoxBoje_SelectedIndexChanged);
             // 
             // panelOdabranaBoja
             // 
