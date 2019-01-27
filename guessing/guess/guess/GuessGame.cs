@@ -14,14 +14,14 @@ namespace guess
         {
             GeneriraniBrojevi = new List<int>();
             UneseniBrojevi = new List<int>();
-            GenerirajBrojeve();
         }
 
-        private void GenerirajBrojeve()
+        public void GenerirajBrojeve()
         {
-            for (int i=0; i<5; i++)
+            GeneriraniBrojevi.Clear();
+            Random r = new Random();
+            while (GeneriraniBrojevi.Count < 5)
             {
-                Random r = new Random();
                 int randomNumber = r.Next(0, 20);
                 if (!GeneriraniBrojevi.Contains(randomNumber))
                     GeneriraniBrojevi.Add(randomNumber);
@@ -30,7 +30,15 @@ namespace guess
         }
         public bool ProvjeraIspravnosti()
         {
-            return false;
+            bool pogodak = false;
+            for (int i=0; i<5; i++)
+            {
+                if (GeneriraniBrojevi[i] == UneseniBrojevi[i])
+                    pogodak = true;
+                else
+                    break;
+            }
+            return pogodak;
         }
     }
 }

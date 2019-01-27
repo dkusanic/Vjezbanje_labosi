@@ -164,10 +164,12 @@
             this.buttonProvjera.TabIndex = 3;
             this.buttonProvjera.Text = "Provjera";
             this.buttonProvjera.UseVisualStyleBackColor = true;
+            this.buttonProvjera.Click += new System.EventHandler(this.buttonProvjera_Click);
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FormGuessGame
             // 
@@ -179,6 +181,7 @@
             this.Controls.Add(this.groupBoxUnos);
             this.Controls.Add(this.groupBoxGenerirani);
             this.Name = "FormGuessGame";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Guess game";
             this.groupBoxGenerirani.ResumeLayout(false);
             this.groupBoxGenerirani.PerformLayout();
