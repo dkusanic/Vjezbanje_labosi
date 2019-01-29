@@ -62,6 +62,7 @@
             this.listBoxKontakti.Name = "listBoxKontakti";
             this.listBoxKontakti.Size = new System.Drawing.Size(166, 173);
             this.listBoxKontakti.TabIndex = 1;
+            this.listBoxKontakti.SelectedIndexChanged += new System.EventHandler(this.listBoxKontakti_SelectedIndexChanged);
             // 
             // label2
             // 
