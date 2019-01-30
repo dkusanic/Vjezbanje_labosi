@@ -66,19 +66,29 @@ namespace imenik
             listBoxKontakti.Items.Clear();
             foreach (Kontakt k in listaKontakata)
             {
-                string s = k.Ime.ToString() + " " + k.Prezime.ToString();
+                string s = k.ToString();
                 listBoxKontakti.Items.Add(s);
             }
         }
 
-        private void PrikaziKontakt(Kontakt k)
+        private void PrikaziKontakt(string s)
         {
-            
+            for (int i=0; i < listaKontakata.Count; i++)
+            {
+                if (listBoxKontakti.SelectedIndex.ToString() == listaKontakata[i].ToString())
+                {
+                    textBoxIme.Text = listaKontakata[i].Ime;
+                    textBoxPrezime.Text = listaKontakata[i].Prezime;
+                    textBoxEmail.Text = listaKontakata[i].Email;
+                    textBoxTelefon.Text = listaKontakata[i].Telefon;
+                    comboBoxGrupa.Text = listaKontakata[i].grupa.ToString();
+                }
+            }
         }
 
         private void listBoxKontakti_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            PrikaziKontakt(listBoxKontakti.SelectedIndex.ToString());
         }
     }
 }

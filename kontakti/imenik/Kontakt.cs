@@ -17,5 +17,11 @@ namespace imenik
         {
             
         }
+
+        public override string ToString()
+        {
+            string s = Ime + " " + Prezime;
+            return s;
+        }
     }
 }
