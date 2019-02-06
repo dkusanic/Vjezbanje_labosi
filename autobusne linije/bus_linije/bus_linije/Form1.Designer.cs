@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.autobusnaLinijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.polazisteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.odredisteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.udaljenostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cijenaKarteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cijenaStudentiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cijenaPovratnaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autobusnaLinijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autobusnaLinijaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -57,10 +57,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(705, 426);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // autobusnaLinijaBindingSource
-            // 
-            this.autobusnaLinijaBindingSource.DataSource = typeof(bus_linije.AutobusnaLinija);
             // 
             // polazisteDataGridViewTextBoxColumn
             // 
@@ -98,6 +94,10 @@
             this.cijenaPovratnaDataGridViewTextBoxColumn.HeaderText = "CijenaPovratna";
             this.cijenaPovratnaDataGridViewTextBoxColumn.Name = "cijenaPovratnaDataGridViewTextBoxColumn";
             // 
+            // autobusnaLinijaBindingSource
+            // 
+            this.autobusnaLinijaBindingSource.DataSource = typeof(bus_linije.AutobusnaLinija);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,6 +105,7 @@
             this.ClientSize = new System.Drawing.Size(729, 450);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AUTOBUSNE LINIJE";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

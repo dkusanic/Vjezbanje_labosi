@@ -8,17 +8,18 @@ namespace Podaci
 {
     public static class Podaci
     {
-        public static List<string> DohvatiAUtobusneLinije()=>
-            new List<string>
-            {
-                "Varaždin;Zagreb;80",
-                "Varaždin;Čakovec;20",
-                "Varaždin:Slavosnki Brod;240",
-                "Varaždin;Krapina;40",
-                "Varaždin;Novi marof;22",
-                "Varaždin;Koprivnica;45",
-                "Varaždin;Virovitica;100",
-                "Varaždin;Osijek;220"
-            };
+        public static List<string> DohvatiAUtobusneLinije()
+        {
+            List<string> list = new List<string>();
+            list.Add("Varaždin;Zagreb;80");
+            list.Add("Varaždin;Čakovec;20");
+            list.Add("Varaždin:Slavonski Brod;240");
+            list.Add("Varaždin;Krapina;40");
+            list.Add("Varaždin;Novi Marof;22");
+            list.Add("Varaždin;Koprivnica;45");
+            list.Add("Varaždin;Virovitica;100");
+            list.Add("Varaždin;Osijek;220");
+            return list;
+        }
     }
 }

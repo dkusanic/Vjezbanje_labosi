@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace bus_linije
@@ -18,9 +12,10 @@ namespace bus_linije
             InitializeComponent();
         }
 
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            busLinije = AutobusnaLinija.UcitajAUtobusneLInije(Podaci.Podaci.DohvatiAUtobusneLinije());
+            busLinije = AutobusnaLinija.UcitajAUtobusneLinije(Podaci.Podaci.DohvatiAUtobusneLinije());
             dataGridView1.DataSource = busLinije;
         }
     }

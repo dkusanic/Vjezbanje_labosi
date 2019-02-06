@@ -2,7 +2,7 @@
 
 namespace bus_linije
 {
-    public class AutobusnaLinija
+    class AutobusnaLinija
     {
         public string Polaziste { get; set; }
         public string Odrediste { get; set; }
@@ -11,28 +11,28 @@ namespace bus_linije
         public double CijenaStudenti { get; set; }
         public double CijenaPovratna { get; set; }
 
-        AutobusnaLinija(string polaziste, string odrediste, int udaljenost)
+        public AutobusnaLinija(string polaziste, string odrediste, int udaljenost)
         {
             Polaziste = polaziste;
             Odrediste = odrediste;
             Udaljenost = udaljenost;
-            CijenaKarte = IzracunajCijenuKarte();
-            CijenaStudenti = IzracunajcijenuStudenti();
-            CijenaPovratna = IzracunajCijenaPovratna();
+            IzracunajCijenuKarte();
+            IzracunajcijenuStudenti();
+            IzracunajCijenaPovratna();
         }
         public double IzracunajCijenuKarte()
         {
-            return Udaljenost * 1.5;
+            return CijenaKarte = (double)Udaljenost * 1.5;
         }
         public double IzracunajcijenuStudenti()
         {
-            return Udaljenost * 0.8;
+            return CijenaStudenti = (double)Udaljenost * 0.8;
         }
         public double IzracunajCijenaPovratna()
         {
-            return Udaljenost * 2 * 0.8;
+            return CijenaPovratna = (double)Udaljenost * 2 * 0.8;
         }
-        public static List<AutobusnaLinija> UcitajAUtobusneLInije(List<string> podaci)
+        public static List<AutobusnaLinija> UcitajAUtobusneLinije(List<string> podaci)
         {
             List<AutobusnaLinija> linije = new List<AutobusnaLinija>();
             foreach (string linija in podaci)
