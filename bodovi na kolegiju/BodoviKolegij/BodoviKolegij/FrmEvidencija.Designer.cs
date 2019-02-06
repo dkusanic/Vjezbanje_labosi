@@ -236,7 +236,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
             this.Name = "FrmEvidencija";
-            this.Text = "Evidencija";
+            this.Text = "r";
             this.Load += new System.EventHandler(this.FrmEvidencija_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.predmetiBindingSource1)).EndInit();
