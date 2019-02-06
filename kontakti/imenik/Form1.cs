@@ -71,24 +71,24 @@ namespace imenik
             }
         }
 
-        private void PrikaziKontakt(string s)
+        private void PrikaziKontakt(int s)
         {
-            for (int i=0; i < listaKontakata.Count; i++)
+            for (int i=0; i < listaKontakata.Count(); i++)
             {
-                if (listBoxKontakti.SelectedIndex.ToString() == listaKontakata[i].ToString())
+                if (s == i)
                 {
                     textBoxIme.Text = listaKontakata[i].Ime;
                     textBoxPrezime.Text = listaKontakata[i].Prezime;
                     textBoxEmail.Text = listaKontakata[i].Email;
                     textBoxTelefon.Text = listaKontakata[i].Telefon;
-                    comboBoxGrupa.Text = listaKontakata[i].grupa.ToString();
+                    comboBoxGrupa.Text = listaKontakata[i].grupa.NazivGrupe;
                 }
             }
         }
 
         private void listBoxKontakti_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PrikaziKontakt(listBoxKontakti.SelectedIndex.ToString());
+            PrikaziKontakt(listBoxKontakti.SelectedIndex);
         }
     }
 }
