@@ -18,7 +18,7 @@ namespace imenik
             
         }
 
-        public override string ToString()
+        public string ToString()
         {
             string s = Ime + " " + Prezime;
             return s;
