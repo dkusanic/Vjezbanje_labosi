@@ -97,5 +97,19 @@ namespace imenik
         {
             PrikaziKontakt(listBoxKontakti.SelectedIndex);
         }
+
+        private void textBoxTrazi_TextChanged(object sender, EventArgs e)
+        {
+            string trazi = textBoxTrazi.Text;
+            listBoxKontakti.Items.Clear();
+            foreach (Kontakt k in listaKontakata)
+            {
+                if (trazi == k.Ime || trazi == k.Prezime || trazi == k.Email || trazi == k.Telefon || trazi == k.grupa.NazivGrupe)
+                {
+                    string s = k.ToString();
+                    listBoxKontakti.Items.Add(s);
+                }                    
+            }
+        }       
     }
 }

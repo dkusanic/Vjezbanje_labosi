@@ -43,9 +43,9 @@
             this.textBoxTelefon = new System.Windows.Forms.TextBox();
             this.labelGrupa = new System.Windows.Forms.Label();
             this.comboBoxGrupa = new System.Windows.Forms.ComboBox();
+            this.grupaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonDodaj = new System.Windows.Forms.Button();
             this.buttonSpremi = new System.Windows.Forms.Button();
-            this.grupaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grupaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +82,7 @@
             this.textBoxTrazi.Name = "textBoxTrazi";
             this.textBoxTrazi.Size = new System.Drawing.Size(125, 20);
             this.textBoxTrazi.TabIndex = 3;
+            this.textBoxTrazi.TextChanged += new System.EventHandler(this.textBoxTrazi_TextChanged);
             // 
             // labelIme
             // 
@@ -165,6 +166,10 @@
             this.comboBoxGrupa.Size = new System.Drawing.Size(123, 21);
             this.comboBoxGrupa.TabIndex = 13;
             // 
+            // grupaBindingSource
+            // 
+            this.grupaBindingSource.DataSource = typeof(imenik.Grupa);
+            // 
             // buttonDodaj
             // 
             this.buttonDodaj.Location = new System.Drawing.Point(207, 210);
@@ -184,10 +189,6 @@
             this.buttonSpremi.Text = "Spremi";
             this.buttonSpremi.UseVisualStyleBackColor = true;
             this.buttonSpremi.Click += new System.EventHandler(this.buttonSpremi_Click);
-            // 
-            // grupaBindingSource
-            // 
-            this.grupaBindingSource.DataSource = typeof(imenik.Grupa);
             // 
             // Form1
             // 
