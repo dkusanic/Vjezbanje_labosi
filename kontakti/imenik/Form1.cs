@@ -41,6 +41,13 @@ namespace imenik
             comboBoxGrupa.Enabled = true;
             buttonSpremi.Enabled = true;
             buttonDodaj.Enabled = false;
+            List<string> popisGrupa = new List<string>();
+            foreach (Kontakt k in listaKontakata)
+            {
+                string s = k.grupa.NazivGrupe;
+                popisGrupa.Add(s);
+            }
+            comboBoxGrupa.DataSource = popisGrupa;
         }
 
         private void buttonSpremi_Click(object sender, EventArgs e)

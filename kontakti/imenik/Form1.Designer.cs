@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelKontakti = new System.Windows.Forms.Label();
             this.listBoxKontakti = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,6 +45,8 @@
             this.comboBoxGrupa = new System.Windows.Forms.ComboBox();
             this.buttonDodaj = new System.Windows.Forms.Button();
             this.buttonSpremi = new System.Windows.Forms.Button();
+            this.grupaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.grupaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelKontakti
@@ -155,6 +158,7 @@
             // 
             // comboBoxGrupa
             // 
+            this.comboBoxGrupa.DataSource = this.grupaBindingSource;
             this.comboBoxGrupa.FormattingEnabled = true;
             this.comboBoxGrupa.Location = new System.Drawing.Point(275, 169);
             this.comboBoxGrupa.Name = "comboBoxGrupa";
@@ -181,6 +185,10 @@
             this.buttonSpremi.UseVisualStyleBackColor = true;
             this.buttonSpremi.Click += new System.EventHandler(this.buttonSpremi_Click);
             // 
+            // grupaBindingSource
+            // 
+            this.grupaBindingSource.DataSource = typeof(imenik.Grupa);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,6 +214,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KONTAKTI";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grupaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,6 +238,7 @@
         private System.Windows.Forms.ComboBox comboBoxGrupa;
         private System.Windows.Forms.Button buttonDodaj;
         private System.Windows.Forms.Button buttonSpremi;
+        private System.Windows.Forms.BindingSource grupaBindingSource;
     }
 }
 
