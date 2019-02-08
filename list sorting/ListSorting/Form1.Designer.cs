@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBoxData = new System.Windows.Forms.GroupBox();
-            this.labelNameLastName = new System.Windows.Forms.Label();
-            this.textBoxNameLastName = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.textBoxNameLastName = new System.Windows.Forms.TextBox();
+            this.labelNameLastName = new System.Windows.Forms.Label();
             this.groupBoxSortMethod = new System.Windows.Forms.GroupBox();
-            this.buttonSortName = new System.Windows.Forms.Button();
-            this.buttonSortLastname = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonSortLastname = new System.Windows.Forms.Button();
+            this.buttonSortName = new System.Windows.Forms.Button();
             this.listBoxPopis = new System.Windows.Forms.ListBox();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBoxData.SuspendLayout();
             this.groupBoxSortMethod.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxData
@@ -53,22 +56,6 @@
             this.groupBoxData.TabStop = false;
             this.groupBoxData.Text = "Data";
             // 
-            // labelNameLastName
-            // 
-            this.labelNameLastName.AutoSize = true;
-            this.labelNameLastName.Location = new System.Drawing.Point(19, 25);
-            this.labelNameLastName.Name = "labelNameLastName";
-            this.labelNameLastName.Size = new System.Drawing.Size(113, 13);
-            this.labelNameLastName.TabIndex = 0;
-            this.labelNameLastName.Text = "Name and Last Name:";
-            // 
-            // textBoxNameLastName
-            // 
-            this.textBoxNameLastName.Location = new System.Drawing.Point(138, 22);
-            this.textBoxNameLastName.Name = "textBoxNameLastName";
-            this.textBoxNameLastName.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNameLastName.TabIndex = 1;
-            // 
             // buttonAdd
             // 
             this.buttonAdd.Location = new System.Drawing.Point(244, 20);
@@ -77,6 +64,23 @@
             this.buttonAdd.TabIndex = 2;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // textBoxNameLastName
+            // 
+            this.textBoxNameLastName.Location = new System.Drawing.Point(138, 22);
+            this.textBoxNameLastName.Name = "textBoxNameLastName";
+            this.textBoxNameLastName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNameLastName.TabIndex = 1;
+            // 
+            // labelNameLastName
+            // 
+            this.labelNameLastName.AutoSize = true;
+            this.labelNameLastName.Location = new System.Drawing.Point(19, 25);
+            this.labelNameLastName.Name = "labelNameLastName";
+            this.labelNameLastName.Size = new System.Drawing.Size(113, 13);
+            this.labelNameLastName.TabIndex = 0;
+            this.labelNameLastName.Text = "Name and Last Name:";
             // 
             // groupBoxSortMethod
             // 
@@ -90,14 +94,14 @@
             this.groupBoxSortMethod.TabStop = false;
             this.groupBoxSortMethod.Text = "Sort Method";
             // 
-            // buttonSortName
+            // buttonClear
             // 
-            this.buttonSortName.Location = new System.Drawing.Point(6, 19);
-            this.buttonSortName.Name = "buttonSortName";
-            this.buttonSortName.Size = new System.Drawing.Size(75, 23);
-            this.buttonSortName.TabIndex = 0;
-            this.buttonSortName.Text = "By Name";
-            this.buttonSortName.UseVisualStyleBackColor = true;
+            this.buttonClear.Location = new System.Drawing.Point(244, 19);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(75, 23);
+            this.buttonClear.TabIndex = 2;
+            this.buttonClear.Text = "Clear List";
+            this.buttonClear.UseVisualStyleBackColor = true;
             // 
             // buttonSortLastname
             // 
@@ -108,14 +112,14 @@
             this.buttonSortLastname.Text = "By Lastname";
             this.buttonSortLastname.UseVisualStyleBackColor = true;
             // 
-            // buttonClear
+            // buttonSortName
             // 
-            this.buttonClear.Location = new System.Drawing.Point(244, 19);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(75, 23);
-            this.buttonClear.TabIndex = 2;
-            this.buttonClear.Text = "Clear List";
-            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonSortName.Location = new System.Drawing.Point(6, 19);
+            this.buttonSortName.Name = "buttonSortName";
+            this.buttonSortName.Size = new System.Drawing.Size(75, 23);
+            this.buttonSortName.TabIndex = 0;
+            this.buttonSortName.Text = "By Name";
+            this.buttonSortName.UseVisualStyleBackColor = true;
             // 
             // listBoxPopis
             // 
@@ -124,6 +128,10 @@
             this.listBoxPopis.Name = "listBoxPopis";
             this.listBoxPopis.Size = new System.Drawing.Size(330, 160);
             this.listBoxPopis.TabIndex = 2;
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(ListSorting.User);
             // 
             // Form1
             // 
@@ -134,11 +142,12 @@
             this.Controls.Add(this.groupBoxSortMethod);
             this.Controls.Add(this.groupBoxData);
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "List Sorting";
             this.groupBoxData.ResumeLayout(false);
             this.groupBoxData.PerformLayout();
             this.groupBoxSortMethod.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -154,6 +163,7 @@
         private System.Windows.Forms.Button buttonSortLastname;
         private System.Windows.Forms.Button buttonSortName;
         private System.Windows.Forms.ListBox listBoxPopis;
+        private System.Windows.Forms.BindingSource userBindingSource;
     }
 }
 
