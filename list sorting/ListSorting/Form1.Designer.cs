@@ -102,6 +102,7 @@
             this.buttonClear.TabIndex = 2;
             this.buttonClear.Text = "Clear List";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonSortLastname
             // 
@@ -111,6 +112,7 @@
             this.buttonSortLastname.TabIndex = 1;
             this.buttonSortLastname.Text = "By Lastname";
             this.buttonSortLastname.UseVisualStyleBackColor = true;
+            this.buttonSortLastname.Click += new System.EventHandler(this.buttonSortLastname_Click);
             // 
             // buttonSortName
             // 
@@ -120,6 +122,7 @@
             this.buttonSortName.TabIndex = 0;
             this.buttonSortName.Text = "By Name";
             this.buttonSortName.UseVisualStyleBackColor = true;
+            this.buttonSortName.Click += new System.EventHandler(this.buttonSortName_Click);
             // 
             // listBoxPopis
             // 

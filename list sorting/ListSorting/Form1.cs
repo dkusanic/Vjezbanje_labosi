@@ -28,12 +28,32 @@ namespace ListSorting
         }
         private void RefreshList()
         {
+            listBoxPopis.DataSource = null;
             listBoxPopis.Items.Clear();
-            foreach (User u in lista)
-            {
-                string s = u.ToString();
-                listBoxPopis.Items.Add(s);
-            }
+            listBoxPopis.DataSource = lista;
+        }
+
+        private void buttonSortName_Click(object sender, EventArgs e)
+        {
+            var listaName = lista.OrderBy(obj => obj.Name).ToList();
+            listBoxPopis.DataSource = null;
+            listBoxPopis.Items.Clear();
+            listBoxPopis.DataSource = listaName;
+        }
+
+        private void buttonSortLastname_Click(object sender, EventArgs e)
+        {
+            var listaLast = lista.OrderBy(obj => obj.Lastname).ToList();
+            listBoxPopis.DataSource = null;
+            lista.OrderBy(obj => obj.Lastname).ToList();
+            listBoxPopis.Items.Clear();
+            listBoxPopis.DataSource = listaLast;
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            lista.Clear();
+            RefreshList();
         }
     }
 }
