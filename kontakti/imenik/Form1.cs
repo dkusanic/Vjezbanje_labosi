@@ -104,7 +104,7 @@ namespace imenik
             listBoxKontakti.Items.Clear();
             foreach (Kontakt k in listaKontakata)
             {
-                if (trazi == k.Ime || trazi == k.Prezime || trazi == k.Email || trazi == k.Telefon || trazi == k.grupa.NazivGrupe)
+                if (k.Ime.Contains(trazi) || k.Prezime.Contains(trazi) || k.Email.Contains(trazi) || k.Telefon.Contains(trazi) || k.grupa.NazivGrupe.Contains(trazi))
                 {
                     string s = k.ToString();
                     listBoxKontakti.Items.Add(s);
