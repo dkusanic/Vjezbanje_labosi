@@ -22,5 +22,7 @@ namespace RegistracijaVozila
             if (Data.Korisnik.AutorizirajKorisnika(textBoxKorime.Text, textBoxLozinka.Text))
                 MessageBox.Show("radi");
         }
+
+
     }
 }
