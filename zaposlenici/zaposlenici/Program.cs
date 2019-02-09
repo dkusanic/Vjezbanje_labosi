@@ -57,10 +57,10 @@ namespace zaposlenici
                         foreach (Zaposlenik z in listaZaposlenika)
                         {
                             Console.WriteLine("|{0,3}|{1,20}|{2,15}|{3,15}|", z.Id, z.ImePrezime, z.IzracunUkupnePlace(), z.IzracunProsjecneZarade());
-                          //  Console.WriteLine(z.Id + " | " + z.ImePrezime + " | " + z.IzracunUkupnePlace() + " | " + z.IzracunProsjecneZarade());
                         }
-                        Console.WriteLine("\nPritisnite Enter za povratak u glavni izbornik!");
-                        Console.ReadLine();
+                        Console.WriteLine("\n-------\nTRAŽI: ");
+                        string trazi = Console.ReadLine();
+                        traziZaposlenika(trazi);
                         break;
                     case 0:
                         break;
@@ -71,6 +71,19 @@ namespace zaposlenici
                         break;
                 }
             } while (izbor != 0);
+
+            void traziZaposlenika(string t)
+            {
+                Console.Clear();
+                Console.WriteLine("|{0,3}|{1,20}|{2,15}|{3,15}|", "ID", "Ime i prezime", "Ukupna plaća", "Prosječna plaća");
+                foreach (Zaposlenik z in listaZaposlenika)
+                {
+                    if (z.Id.ToString().Contains(t) || z.ImePrezime.Contains(t))
+                        Console.WriteLine("|{0,3}|{1,20}|{2,15}|{3,15}|", z.Id, z.ImePrezime, z.IzracunUkupnePlace(), z.IzracunProsjecneZarade());
+                }
+                Console.WriteLine("\nPritisnite Enter za povratak u glavni izbornik!");
+                Console.ReadLine();
+            }
         }
     }
 }
