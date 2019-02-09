@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBoxPrijava = new System.Windows.Forms.GroupBox();
             this.buttonPrijava = new System.Windows.Forms.Button();
             this.textBoxLozinka = new System.Windows.Forms.TextBox();
@@ -57,10 +58,23 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonDodaj = new System.Windows.Forms.Button();
             this.buttonObnoviReg = new System.Windows.Forms.Button();
+            this.vozilaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.voziloBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.imeVlasnikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prezimeVlasnikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.godisteVozilaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brojSasijeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.snagaVozilaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zapremninaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipGorivaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cO2EmisijeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vrijemeRegistracijeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxPrijava.SuspendLayout();
             this.groupBoxDodajVozilo.SuspendLayout();
             this.groupBoxPregledVozila.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vozilaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voziloBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxPrijava
@@ -307,7 +321,19 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.imeVlasnikaDataGridViewTextBoxColumn,
+            this.prezimeVlasnikaDataGridViewTextBoxColumn,
+            this.godisteVozilaDataGridViewTextBoxColumn,
+            this.brojSasijeDataGridViewTextBoxColumn,
+            this.snagaVozilaDataGridViewTextBoxColumn,
+            this.zapremninaDataGridViewTextBoxColumn,
+            this.tipGorivaDataGridViewTextBoxColumn,
+            this.cO2EmisijeDataGridViewTextBoxColumn,
+            this.vrijemeRegistracijeDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.voziloBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(6, 60);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(522, 242);
@@ -331,6 +357,68 @@
             this.buttonObnoviReg.Text = "Obnovi registraciju";
             this.buttonObnoviReg.UseVisualStyleBackColor = true;
             // 
+            // vozilaBindingSource
+            // 
+            this.vozilaBindingSource.DataSource = typeof(Data.Vozila);
+            // 
+            // voziloBindingSource
+            // 
+            this.voziloBindingSource.DataSource = typeof(Data.Vozilo);
+            // 
+            // imeVlasnikaDataGridViewTextBoxColumn
+            // 
+            this.imeVlasnikaDataGridViewTextBoxColumn.DataPropertyName = "ImeVlasnika";
+            this.imeVlasnikaDataGridViewTextBoxColumn.HeaderText = "ImeVlasnika";
+            this.imeVlasnikaDataGridViewTextBoxColumn.Name = "imeVlasnikaDataGridViewTextBoxColumn";
+            // 
+            // prezimeVlasnikaDataGridViewTextBoxColumn
+            // 
+            this.prezimeVlasnikaDataGridViewTextBoxColumn.DataPropertyName = "PrezimeVlasnika";
+            this.prezimeVlasnikaDataGridViewTextBoxColumn.HeaderText = "PrezimeVlasnika";
+            this.prezimeVlasnikaDataGridViewTextBoxColumn.Name = "prezimeVlasnikaDataGridViewTextBoxColumn";
+            // 
+            // godisteVozilaDataGridViewTextBoxColumn
+            // 
+            this.godisteVozilaDataGridViewTextBoxColumn.DataPropertyName = "GodisteVozila";
+            this.godisteVozilaDataGridViewTextBoxColumn.HeaderText = "GodisteVozila";
+            this.godisteVozilaDataGridViewTextBoxColumn.Name = "godisteVozilaDataGridViewTextBoxColumn";
+            // 
+            // brojSasijeDataGridViewTextBoxColumn
+            // 
+            this.brojSasijeDataGridViewTextBoxColumn.DataPropertyName = "BrojSasije";
+            this.brojSasijeDataGridViewTextBoxColumn.HeaderText = "BrojSasije";
+            this.brojSasijeDataGridViewTextBoxColumn.Name = "brojSasijeDataGridViewTextBoxColumn";
+            // 
+            // snagaVozilaDataGridViewTextBoxColumn
+            // 
+            this.snagaVozilaDataGridViewTextBoxColumn.DataPropertyName = "SnagaVozila";
+            this.snagaVozilaDataGridViewTextBoxColumn.HeaderText = "SnagaVozila";
+            this.snagaVozilaDataGridViewTextBoxColumn.Name = "snagaVozilaDataGridViewTextBoxColumn";
+            // 
+            // zapremninaDataGridViewTextBoxColumn
+            // 
+            this.zapremninaDataGridViewTextBoxColumn.DataPropertyName = "Zapremnina";
+            this.zapremninaDataGridViewTextBoxColumn.HeaderText = "Zapremnina";
+            this.zapremninaDataGridViewTextBoxColumn.Name = "zapremninaDataGridViewTextBoxColumn";
+            // 
+            // tipGorivaDataGridViewTextBoxColumn
+            // 
+            this.tipGorivaDataGridViewTextBoxColumn.DataPropertyName = "TipGoriva";
+            this.tipGorivaDataGridViewTextBoxColumn.HeaderText = "TipGoriva";
+            this.tipGorivaDataGridViewTextBoxColumn.Name = "tipGorivaDataGridViewTextBoxColumn";
+            // 
+            // cO2EmisijeDataGridViewTextBoxColumn
+            // 
+            this.cO2EmisijeDataGridViewTextBoxColumn.DataPropertyName = "CO2Emisije";
+            this.cO2EmisijeDataGridViewTextBoxColumn.HeaderText = "CO2Emisije";
+            this.cO2EmisijeDataGridViewTextBoxColumn.Name = "cO2EmisijeDataGridViewTextBoxColumn";
+            // 
+            // vrijemeRegistracijeDataGridViewTextBoxColumn
+            // 
+            this.vrijemeRegistracijeDataGridViewTextBoxColumn.DataPropertyName = "VrijemeRegistracije";
+            this.vrijemeRegistracijeDataGridViewTextBoxColumn.HeaderText = "VrijemeRegistracije";
+            this.vrijemeRegistracijeDataGridViewTextBoxColumn.Name = "vrijemeRegistracijeDataGridViewTextBoxColumn";
+            // 
             // FormRegistracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,6 +430,7 @@
             this.Name = "FormRegistracija";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PI - Registracija vozila";
+            this.Load += new System.EventHandler(this.FormRegistracija_Load);
             this.groupBoxPrijava.ResumeLayout(false);
             this.groupBoxPrijava.PerformLayout();
             this.groupBoxDodajVozilo.ResumeLayout(false);
@@ -349,6 +438,8 @@
             this.groupBoxPregledVozila.ResumeLayout(false);
             this.groupBoxPregledVozila.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vozilaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voziloBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -384,6 +475,17 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBoxPrikaziVozila;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource vozilaBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imeVlasnikaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prezimeVlasnikaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn godisteVozilaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brojSasijeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn snagaVozilaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zapremninaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipGorivaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cO2EmisijeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vrijemeRegistracijeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource voziloBindingSource;
     }
 }
 
