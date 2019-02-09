@@ -15,6 +15,7 @@ namespace zaposlenici
         {
             Id = id;
             ImePrezime = imeprezime;
+            MjesecnePlace = new List<double>();
         }
         public void DodajPlacu(double Placa)
         {
@@ -25,13 +26,13 @@ namespace zaposlenici
             double Ukupno = 0;
             foreach (double placa in MjesecnePlace)
                 Ukupno += placa;
-            return Ukupno;
+            return Math.Round(Ukupno, 2);
         }
         public double IzracunProsjecneZarade()
         {
             double Prosjek = 0;
             int brojac = 0;
-            for (int i=0; i<MjesecnePlace.Count; i++)
+            for (int i=0; i < MjesecnePlace.Count(); i++)
             {
                 if (MjesecnePlace[i] != 0)
                 {
@@ -39,7 +40,10 @@ namespace zaposlenici
                     Prosjek += MjesecnePlace[i];
                 }
             }
-            return Prosjek/brojac;
+            if (MjesecnePlace.Count == 0)
+                return 0;
+            else
+                return Math.Round(Prosjek/brojac, 2);
         }
     }
 }

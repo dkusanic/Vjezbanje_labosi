@@ -10,6 +10,7 @@ namespace zaposlenici
     {
         static void Main(string[] args)
         {
+            Console.Title = "Evidencija zaposlenika";
             List<Zaposlenik> listaZaposlenika = new List<Zaposlenik>();
             int izbor = 0;
             int id = 1;
@@ -36,13 +37,37 @@ namespace zaposlenici
                         id++;
                         break;
                     case 2:
+                        Console.Clear();
+                        Console.WriteLine("Odaberi za kojeg zaposlenika želiš unijeti plaću:");
+                        for (int i=0; i<listaZaposlenika.Count(); i++)
+                        {
+                            int j = i + 1;
+                            Console.WriteLine(j + ". " + listaZaposlenika[i].ImePrezime + "\n");
+                        }
+                        Console.WriteLine("- - - - - - - - - - \nOdabir zaposlenika za unos plaće: ");
+                        int a = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Unesi plaću za zaposlenika: ");
+                        double p = double.Parse(Console.ReadLine());
+                        listaZaposlenika[a-1].DodajPlacu(p);
                         break;
                     case 3:
+                        Console.Clear();
+                        Console.WriteLine("ISPIS SVIH ZAPOSLENIKA\n");
+                        Console.WriteLine("|{0,3}|{1,20}|{2,15}|{3,15}|", "ID", "Ime i prezime", "Ukupna plaća", "Prosječna plaća");
+                        foreach (Zaposlenik z in listaZaposlenika)
+                        {
+                            Console.WriteLine("|{0,3}|{1,20}|{2,15}|{3,15}|", z.Id, z.ImePrezime, z.IzracunUkupnePlace(), z.IzracunProsjecneZarade());
+                          //  Console.WriteLine(z.Id + " | " + z.ImePrezime + " | " + z.IzracunUkupnePlace() + " | " + z.IzracunProsjecneZarade());
+                        }
+                        Console.WriteLine("\nPritisnite Enter za povratak u glavni izbornik!");
+                        Console.ReadLine();
                         break;
-                    case 4:
+                    case 0:
                         break;
                     default:
+                        Console.Clear();
                         Console.WriteLine("Pogrešan unos! Pokušajte ponovno!\n");
+                        System.Threading.Thread.Sleep(1000);
                         break;
                 }
             } while (izbor != 0);
