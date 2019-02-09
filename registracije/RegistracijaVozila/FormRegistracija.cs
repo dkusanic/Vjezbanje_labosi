@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace RegistracijaVozila
 {
-    public partial class Form1 : Form
+    public partial class FormRegistracija : Form
     {
-        public Form1()
+        public FormRegistracija()
         {
             InitializeComponent();
+        }
+
+        private void buttonPrijava_Click(object sender, EventArgs e)
+        {
+            if (Data.Korisnik.AutorizirajKorisnika(textBoxKorime.Text, textBoxLozinka.Text))
+                MessageBox.Show("radi");
         }
     }
 }
