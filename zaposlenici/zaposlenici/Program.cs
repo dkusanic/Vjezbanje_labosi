@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace zaposlenici
 {
@@ -17,7 +15,7 @@ namespace zaposlenici
             do
             {
                 Console.Clear();
-                Console.Write("- - - I Z B O R N I K - - -\n" +
+                Console.Write("- - - - - - - I Z B O R N I K - - - - - - -\n" +
                     "1. Dodavanje zaposlenika\n" +
                     "2. Dodavanje plaće zaposleniku (već unesenom)\n" +
                     "3. Pretraživanje i ispis podataka zaposlenika po imenu i/ili ID\n" +
