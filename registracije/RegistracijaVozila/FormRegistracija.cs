@@ -55,5 +55,33 @@ namespace RegistracijaVozila
             oznacenoVozilo.VrijemeRegistracije = DateTime.Today;
             UcitajPodatke();
         }
+
+        private void comboBoxPrikaziVozila_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBoxPrikaziVozila.SelectedIndex)
+            {
+                case 0:
+                    UcitajPodatke();
+                    break;
+                case 1:
+                    UcitajPodatke(1);
+                    break;
+                case 2:
+                    UcitajPodatke(3);
+                    break;
+                case 3:
+                    UcitajPodatke(6);
+                    break;
+                case 4:
+                    UcitajPodatke(12);
+                    break;
+            }
+        }
+        private void UcitajPodatke(int mjesec)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = novoVozilo.DohvatiVozilaUZadnjih(mjesec);
+            dataGridView1.DataSource = bs;
+        }
     }
 }

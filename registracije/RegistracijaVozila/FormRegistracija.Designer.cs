@@ -314,10 +314,17 @@
             // comboBoxPrikaziVozila
             // 
             this.comboBoxPrikaziVozila.FormattingEnabled = true;
+            this.comboBoxPrikaziVozila.Items.AddRange(new object[] {
+            "Svi",
+            "1 mjesec",
+            "3 mjeseca",
+            "6 mjeseci",
+            "12 mjeseci"});
             this.comboBoxPrikaziVozila.Location = new System.Drawing.Point(206, 33);
             this.comboBoxPrikaziVozila.Name = "comboBoxPrikaziVozila";
             this.comboBoxPrikaziVozila.Size = new System.Drawing.Size(160, 21);
             this.comboBoxPrikaziVozila.TabIndex = 1;
+            this.comboBoxPrikaziVozila.SelectedIndexChanged += new System.EventHandler(this.comboBoxPrikaziVozila_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
