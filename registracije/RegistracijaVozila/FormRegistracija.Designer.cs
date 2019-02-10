@@ -357,6 +357,7 @@
             this.buttonObnoviReg.TabIndex = 3;
             this.buttonObnoviReg.Text = "Obnovi registraciju";
             this.buttonObnoviReg.UseVisualStyleBackColor = true;
+            this.buttonObnoviReg.Click += new System.EventHandler(this.buttonObnoviReg_Click);
             // 
             // vozilaBindingSource
             // 

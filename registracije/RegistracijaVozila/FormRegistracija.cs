@@ -45,8 +45,14 @@ namespace RegistracijaVozila
 
         private void buttonDodaj_Click(object sender, EventArgs e)
         {
-            //public void DodajVozilo(string ImeVlasnika, string PrezimeVlasnika, int GodisteVozila, string BrojSasije, int SnagaVozila, int Zapremnina, string TipGoriva, float CO2Emisije, DateTime VrijemeRegistracije)
             novoVozilo.DodajVozilo(textBoxImeVlasnika.Text, textBoxPrezimeVlasnika.Text, int.Parse(textBoxGodisteVozila.Text), textBoxBrojSasije.Text, int.Parse(textBoxSnagaVozila.Text), int.Parse(textBoxZapremnina.Text), comboBoxTipGoriva.Text, float.Parse(textBoxCO2.Text), DateTime.Today);
+            UcitajPodatke();
+        }
+
+        private void buttonObnoviReg_Click(object sender, EventArgs e)
+        {
+            Data.Vozilo oznacenoVozilo = dataGridView1.CurrentRow.DataBoundItem as Data.Vozilo;
+            oznacenoVozilo.VrijemeRegistracije = DateTime.Today;
             UcitajPodatke();
         }
     }
