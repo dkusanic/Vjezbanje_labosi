@@ -347,6 +347,7 @@
             this.buttonDodaj.TabIndex = 16;
             this.buttonDodaj.Text = "Dodaj u sustav";
             this.buttonDodaj.UseVisualStyleBackColor = true;
+            this.buttonDodaj.Click += new System.EventHandler(this.buttonDodaj_Click);
             // 
             // buttonObnoviReg
             // 
