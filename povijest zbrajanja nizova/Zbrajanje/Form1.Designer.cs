@@ -67,6 +67,7 @@
             this.btnSum.TabIndex = 1;
             this.btnSum.Text = "Sum";
             this.btnSum.UseVisualStyleBackColor = true;
+            this.btnSum.Click += new System.EventHandler(this.btnSum_Click);
             // 
             // label1
             // 
