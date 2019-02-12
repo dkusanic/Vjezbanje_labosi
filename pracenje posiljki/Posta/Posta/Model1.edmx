@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PostaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DK_Gradovi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DK_Posiljka">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Posiljatelj" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Primatelj" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Polaziste_ID" Type="int" Nullable="false" />
+          <Property Name="Odrediste_ID" Type="int" Nullable="false" />
+          <Property Name="Trenutno_ID" Type="int" Nullable="false" />
+          <Property Name="Isporuceno" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Posta.dbo.DK_Posiljka_dgv' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DK_Posiljka_dgv">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Isporuceno" />
+            <PropertyRef Name="Polaziste" />
+            <PropertyRef Name="Odrediste" />
+            <PropertyRef Name="Primatelj" />
+            <PropertyRef Name="Posiljatelj" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Isporuceno" Type="bit" Nullable="false" />
+          <Property Name="Polaziste" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Odrediste" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Primatelj" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Posiljatelj" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Posiljka_odrediste_Gradovi_ID">
+          <End Role="DK_Gradovi" Type="Self.DK_Gradovi" Multiplicity="1" />
+          <End Role="DK_Posiljka" Type="Self.DK_Posiljka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DK_Gradovi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DK_Posiljka">
+              <PropertyRef Name="Odrediste_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Posiljka_polaziste_Gradovi_ID">
+          <End Role="DK_Gradovi" Type="Self.DK_Gradovi" Multiplicity="1" />
+          <End Role="DK_Posiljka" Type="Self.DK_Posiljka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DK_Gradovi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DK_Posiljka">
+              <PropertyRef Name="Polaziste_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trenutno_ID_Gradovi_ID">
+          <End Role="DK_Gradovi" Type="Self.DK_Gradovi" Multiplicity="1" />
+          <End Role="DK_Posiljka" Type="Self.DK_Posiljka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DK_Gradovi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DK_Posiljka">
+              <PropertyRef Name="Trenutno_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PostaModelStoreContainer">
+          <EntitySet Name="DK_Gradovi" EntityType="Self.DK_Gradovi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DK_Posiljka" EntityType="Self.DK_Posiljka" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DK_Posiljka_dgv" EntityType="Self.DK_Posiljka_dgv" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DK_Posiljka_dgv].[Id] AS [Id], 
+    [DK_Posiljka_dgv].[Isporuceno] AS [Isporuceno], 
+    [DK_Posiljka_dgv].[Polaziste] AS [Polaziste], 
+    [DK_Posiljka_dgv].[Odrediste] AS [Odrediste], 
+    [DK_Posiljka_dgv].[Primatelj] AS [Primatelj], 
+    [DK_Posiljka_dgv].[Posiljatelj] AS [Posiljatelj]
+    FROM [dbo].[DK_Posiljka_dgv] AS [DK_Posiljka_dgv]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Posiljka_odrediste_Gradovi_ID" Association="Self.FK_Posiljka_odrediste_Gradovi_ID">
+            <End Role="DK_Gradovi" EntitySet="DK_Gradovi" />
+            <End Role="DK_Posiljka" EntitySet="DK_Posiljka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Posiljka_polaziste_Gradovi_ID" Association="Self.FK_Posiljka_polaziste_Gradovi_ID">
+            <End Role="DK_Gradovi" EntitySet="DK_Gradovi" />
+            <End Role="DK_Posiljka" EntitySet="DK_Posiljka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trenutno_ID_Gradovi_ID" Association="Self.FK_Trenutno_ID_Gradovi_ID">
+            <End Role="DK_Gradovi" EntitySet="DK_Gradovi" />
+            <End Role="DK_Posiljka" EntitySet="DK_Posiljka" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PostaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DK_Gradovi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DK_Posiljka" Relationship="Self.FK_Posiljka_odrediste_Gradovi_ID" FromRole="DK_Gradovi" ToRole="DK_Posiljka" />
+          <NavigationProperty Name="DK_Posiljka1" Relationship="Self.FK_Posiljka_polaziste_Gradovi_ID" FromRole="DK_Gradovi" ToRole="DK_Posiljka" />
+          <NavigationProperty Name="DK_Posiljka2" Relationship="Self.FK_Trenutno_ID_Gradovi_ID" FromRole="DK_Gradovi" ToRole="DK_Posiljka" />
+        </EntityType>
+        <EntityType Name="DK_Posiljka">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Posiljatelj" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Primatelj" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Polaziste_ID" Type="Int32" Nullable="false" />
+          <Property Name="Odrediste_ID" Type="Int32" Nullable="false" />
+          <Property Name="Trenutno_ID" Type="Int32" Nullable="false" />
+          <Property Name="Isporuceno" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="DK_Gradovi" Relationship="Self.FK_Posiljka_odrediste_Gradovi_ID" FromRole="DK_Posiljka" ToRole="DK_Gradovi" />
+          <NavigationProperty Name="DK_Gradovi1" Relationship="Self.FK_Posiljka_polaziste_Gradovi_ID" FromRole="DK_Posiljka" ToRole="DK_Gradovi" />
+          <NavigationProperty Name="DK_Gradovi2" Relationship="Self.FK_Trenutno_ID_Gradovi_ID" FromRole="DK_Posiljka" ToRole="DK_Gradovi" />
+        </EntityType>
+        <EntityType Name="DK_Posiljka_dgv">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Isporuceno" />
+            <PropertyRef Name="Polaziste" />
+            <PropertyRef Name="Odrediste" />
+            <PropertyRef Name="Primatelj" />
+            <PropertyRef Name="Posiljatelj" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Isporuceno" Type="Boolean" Nullable="false" />
+          <Property Name="Polaziste" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Odrediste" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Primatelj" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Posiljatelj" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Posiljka_odrediste_Gradovi_ID">
+          <End Role="DK_Gradovi" Type="Self.DK_Gradovi" Multiplicity="1" />
+          <End Role="DK_Posiljka" Type="Self.DK_Posiljka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DK_Gradovi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DK_Posiljka">
+              <PropertyRef Name="Odrediste_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Posiljka_polaziste_Gradovi_ID">
+          <End Role="DK_Gradovi" Type="Self.DK_Gradovi" Multiplicity="1" />
+          <End Role="DK_Posiljka" Type="Self.DK_Posiljka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DK_Gradovi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DK_Posiljka">
+              <PropertyRef Name="Polaziste_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trenutno_ID_Gradovi_ID">
+          <End Role="DK_Gradovi" Type="Self.DK_Gradovi" Multiplicity="1" />
+          <End Role="DK_Posiljka" Type="Self.DK_Posiljka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DK_Gradovi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DK_Posiljka">
+              <PropertyRef Name="Trenutno_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PostaEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DK_Gradovi" EntityType="Self.DK_Gradovi" />
+          <EntitySet Name="DK_Posiljka" EntityType="Self.DK_Posiljka" />
+          <EntitySet Name="DK_Posiljka_dgv" EntityType="Self.DK_Posiljka_dgv" />
+          <AssociationSet Name="FK_Posiljka_odrediste_Gradovi_ID" Association="Self.FK_Posiljka_odrediste_Gradovi_ID">
+            <End Role="DK_Gradovi" EntitySet="DK_Gradovi" />
+            <End Role="DK_Posiljka" EntitySet="DK_Posiljka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Posiljka_polaziste_Gradovi_ID" Association="Self.FK_Posiljka_polaziste_Gradovi_ID">
+            <End Role="DK_Gradovi" EntitySet="DK_Gradovi" />
+            <End Role="DK_Posiljka" EntitySet="DK_Posiljka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trenutno_ID_Gradovi_ID" Association="Self.FK_Trenutno_ID_Gradovi_ID">
+            <End Role="DK_Gradovi" EntitySet="DK_Gradovi" />
+            <End Role="DK_Posiljka" EntitySet="DK_Posiljka" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PostaModelStoreContainer" CdmEntityContainer="PostaEntities1">
+          <EntitySetMapping Name="DK_Gradovi">
+            <EntityTypeMapping TypeName="PostaModel.DK_Gradovi">
+              <MappingFragment StoreEntitySet="DK_Gradovi">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DK_Posiljka">
+            <EntityTypeMapping TypeName="PostaModel.DK_Posiljka">
+              <MappingFragment StoreEntitySet="DK_Posiljka">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Posiljatelj" ColumnName="Posiljatelj" />
+                <ScalarProperty Name="Primatelj" ColumnName="Primatelj" />
+                <ScalarProperty Name="Polaziste_ID" ColumnName="Polaziste_ID" />
+                <ScalarProperty Name="Odrediste_ID" ColumnName="Odrediste_ID" />
+                <ScalarProperty Name="Trenutno_ID" ColumnName="Trenutno_ID" />
+                <ScalarProperty Name="Isporuceno" ColumnName="Isporuceno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DK_Posiljka_dgv">
+            <EntityTypeMapping TypeName="PostaModel.DK_Posiljka_dgv">
+              <MappingFragment StoreEntitySet="DK_Posiljka_dgv">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Isporuceno" ColumnName="Isporuceno" />
+                <ScalarProperty Name="Polaziste" ColumnName="Polaziste" />
+                <ScalarProperty Name="Odrediste" ColumnName="Odrediste" />
+                <ScalarProperty Name="Primatelj" ColumnName="Primatelj" />
+                <ScalarProperty Name="Posiljatelj" ColumnName="Posiljatelj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

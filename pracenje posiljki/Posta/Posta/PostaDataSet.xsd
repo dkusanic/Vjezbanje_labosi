@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PostaDataSet" targetNamespace="http://tempuri.org/PostaDataSet.xsd" xmlns:mstns="http://tempuri.org/PostaDataSet.xsd" xmlns="http://tempuri.org/PostaDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="PostaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PostaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Posta.Properties.Settings.GlobalReference.Default.PostaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DK_Posiljka_dgvTableAdapter" GeneratorDataComponentClassName="DK_Posiljka_dgvTableAdapter" Name="DK_Posiljka_dgv" UserDataComponentName="DK_Posiljka_dgvTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PostaConnectionString (Settings)" DbObjectName="Posta.dbo.DK_Posiljka_dgv" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id, Isporuceno, Polaziste, Odrediste, Primatelj, Posiljatelj FROM dbo.DK_Posiljka_dgv</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="Isporuceno" DataSetColumn="Isporuceno" />
+              <Mapping SourceColumn="Polaziste" DataSetColumn="Polaziste" />
+              <Mapping SourceColumn="Odrediste" DataSetColumn="Odrediste" />
+              <Mapping SourceColumn="Primatelj" DataSetColumn="Primatelj" />
+              <Mapping SourceColumn="Posiljatelj" DataSetColumn="Posiljatelj" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="PostaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PostaDataSet" msprop:Generator_UserDSName="PostaDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DK_Posiljka_dgv" msprop:Generator_TableClassName="DK_Posiljka_dgvDataTable" msprop:Generator_TableVarName="tableDK_Posiljka_dgv" msprop:Generator_TablePropName="DK_Posiljka_dgv" msprop:Generator_RowDeletingName="DK_Posiljka_dgvRowDeleting" msprop:Generator_RowChangingName="DK_Posiljka_dgvRowChanging" msprop:Generator_RowEvHandlerName="DK_Posiljka_dgvRowChangeEventHandler" msprop:Generator_RowDeletedName="DK_Posiljka_dgvRowDeleted" msprop:Generator_UserTableName="DK_Posiljka_dgv" msprop:Generator_RowChangedName="DK_Posiljka_dgvRowChanged" msprop:Generator_RowEvArgName="DK_Posiljka_dgvRowChangeEvent" msprop:Generator_RowClassName="DK_Posiljka_dgvRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Isporuceno" msprop:Generator_ColumnVarNameInTable="columnIsporuceno" msprop:Generator_ColumnPropNameInRow="Isporuceno" msprop:Generator_ColumnPropNameInTable="IsporucenoColumn" msprop:Generator_UserColumnName="Isporuceno" type="xs:boolean" />
+              <xs:element name="Polaziste" msprop:Generator_ColumnVarNameInTable="columnPolaziste" msprop:Generator_ColumnPropNameInRow="Polaziste" msprop:Generator_ColumnPropNameInTable="PolazisteColumn" msprop:Generator_UserColumnName="Polaziste">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Odrediste" msprop:Generator_ColumnVarNameInTable="columnOdrediste" msprop:Generator_ColumnPropNameInRow="Odrediste" msprop:Generator_ColumnPropNameInTable="OdredisteColumn" msprop:Generator_UserColumnName="Odrediste">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Primatelj" msprop:Generator_ColumnVarNameInTable="columnPrimatelj" msprop:Generator_ColumnPropNameInRow="Primatelj" msprop:Generator_ColumnPropNameInTable="PrimateljColumn" msprop:Generator_UserColumnName="Primatelj">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Posiljatelj" msprop:Generator_ColumnVarNameInTable="columnPosiljatelj" msprop:Generator_ColumnPropNameInRow="Posiljatelj" msprop:Generator_ColumnPropNameInTable="PosiljateljColumn" msprop:Generator_UserColumnName="Posiljatelj">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DK_Posiljka_dgv" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
