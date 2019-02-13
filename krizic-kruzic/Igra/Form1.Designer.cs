@@ -47,6 +47,7 @@
             this.btn11.Size = new System.Drawing.Size(40, 40);
             this.btn11.TabIndex = 0;
             this.btn11.UseVisualStyleBackColor = true;
+            this.btn11.Click += new System.EventHandler(this.btn11_Click);
             // 
             // btn12
             // 
@@ -120,6 +121,7 @@
             this.btnNovaIgra.TabIndex = 9;
             this.btnNovaIgra.Text = "Nova igra";
             this.btnNovaIgra.UseVisualStyleBackColor = true;
+            this.btnNovaIgra.Click += new System.EventHandler(this.btnNovaIgra_Click);
             // 
             // Form1
             // 

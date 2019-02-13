@@ -29,6 +29,7 @@ namespace Posta
             BindingSource bs = new BindingSource();
             bs.DataSource = posiljke;
             dgvPosiljke.DataSource = bs;
+            
         }
     }
 }
