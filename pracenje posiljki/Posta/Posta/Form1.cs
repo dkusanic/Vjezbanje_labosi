@@ -20,6 +20,10 @@ namespace Posta
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'postaDataSet2.DK_Gradovi' table. You can move, or remove it, as needed.
+            this.dK_GradoviTableAdapter1.Fill(this.postaDataSet2.DK_Gradovi);
+            // TODO: This line of code loads data into the 'postaDataSet1.DK_Gradovi' table. You can move, or remove it, as needed.
+            this.dK_GradoviTableAdapter.Fill(this.postaDataSet1.DK_Gradovi);
             // TODO: This line of code loads data into the 'postaDataSet.DK_Posiljka_dgv' table. You can move, or remove it, as needed.
             this.dK_Posiljka_dgvTableAdapter.Fill(this.postaDataSet.DK_Posiljka_dgv);
 

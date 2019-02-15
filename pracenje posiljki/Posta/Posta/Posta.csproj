@@ -90,6 +90,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PostaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PostaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostaDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PostaDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostaDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -122,6 +132,28 @@
     </None>
     <None Include="PostaDataSet.xss">
       <DependentUpon>PostaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PostaDataSet1.xsc">
+      <DependentUpon>PostaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PostaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PostaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PostaDataSet1.xss">
+      <DependentUpon>PostaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PostaDataSet2.xsc">
+      <DependentUpon>PostaDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="PostaDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PostaDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PostaDataSet2.xss">
+      <DependentUpon>PostaDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

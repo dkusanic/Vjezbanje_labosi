@@ -30,25 +30,35 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvPosiljke = new System.Windows.Forms.DataGridView();
+            this.dKPosiljkadgvBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.postaDataSet = new Posta.PostaDataSet();
             this.grbPosiljatelj = new System.Windows.Forms.GroupBox();
-            this.grbPrimatelj = new System.Windows.Forms.GroupBox();
             this.txtPosiljatelj = new System.Windows.Forms.TextBox();
+            this.grbPrimatelj = new System.Windows.Forms.GroupBox();
             this.txtPrimatelj = new System.Windows.Forms.TextBox();
             this.btnSpremi = new System.Windows.Forms.Button();
-            this.postaDataSet = new Posta.PostaDataSet();
-            this.dKPosiljkadgvBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dK_Posiljka_dgvTableAdapter = new Posta.PostaDataSetTableAdapters.DK_Posiljka_dgvTableAdapter();
+            this.postaDataSet1 = new Posta.PostaDataSet1();
+            this.dKGradoviBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dK_GradoviTableAdapter = new Posta.PostaDataSet1TableAdapters.DK_GradoviTableAdapter();
+            this.postaDataSet2 = new Posta.PostaDataSet2();
+            this.dKGradoviBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dK_GradoviTableAdapter1 = new Posta.PostaDataSet2TableAdapters.DK_GradoviTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isporucenoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.polazisteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.odredisteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.polazisteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.odredisteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.primateljDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.posiljateljDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosiljke)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dKPosiljkadgvBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postaDataSet)).BeginInit();
             this.grbPosiljatelj.SuspendLayout();
             this.grbPrimatelj.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.postaDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dKPosiljkadgvBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postaDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dKGradoviBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postaDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dKGradoviBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPosiljke
@@ -69,6 +79,16 @@
             this.dgvPosiljke.Size = new System.Drawing.Size(491, 158);
             this.dgvPosiljke.TabIndex = 0;
             // 
+            // dKPosiljkadgvBindingSource
+            // 
+            this.dKPosiljkadgvBindingSource.DataMember = "DK_Posiljka_dgv";
+            this.dKPosiljkadgvBindingSource.DataSource = this.postaDataSet;
+            // 
+            // postaDataSet
+            // 
+            this.postaDataSet.DataSetName = "PostaDataSet";
+            this.postaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // grbPosiljatelj
             // 
             this.grbPosiljatelj.Controls.Add(this.txtPosiljatelj);
@@ -79,6 +99,14 @@
             this.grbPosiljatelj.TabStop = false;
             this.grbPosiljatelj.Text = "Pošiljatelj";
             // 
+            // txtPosiljatelj
+            // 
+            this.txtPosiljatelj.Location = new System.Drawing.Point(6, 19);
+            this.txtPosiljatelj.Multiline = true;
+            this.txtPosiljatelj.Name = "txtPosiljatelj";
+            this.txtPosiljatelj.Size = new System.Drawing.Size(227, 75);
+            this.txtPosiljatelj.TabIndex = 0;
+            // 
             // grbPrimatelj
             // 
             this.grbPrimatelj.Controls.Add(this.txtPrimatelj);
@@ -88,14 +116,6 @@
             this.grbPrimatelj.TabIndex = 2;
             this.grbPrimatelj.TabStop = false;
             this.grbPrimatelj.Text = "Primatelj";
-            // 
-            // txtPosiljatelj
-            // 
-            this.txtPosiljatelj.Location = new System.Drawing.Point(6, 19);
-            this.txtPosiljatelj.Multiline = true;
-            this.txtPosiljatelj.Name = "txtPosiljatelj";
-            this.txtPosiljatelj.Size = new System.Drawing.Size(227, 75);
-            this.txtPosiljatelj.TabIndex = 0;
             // 
             // txtPrimatelj
             // 
@@ -114,19 +134,37 @@
             this.btnSpremi.Text = "Spremi promjene";
             this.btnSpremi.UseVisualStyleBackColor = true;
             // 
-            // postaDataSet
-            // 
-            this.postaDataSet.DataSetName = "PostaDataSet";
-            this.postaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dKPosiljkadgvBindingSource
-            // 
-            this.dKPosiljkadgvBindingSource.DataMember = "DK_Posiljka_dgv";
-            this.dKPosiljkadgvBindingSource.DataSource = this.postaDataSet;
-            // 
             // dK_Posiljka_dgvTableAdapter
             // 
             this.dK_Posiljka_dgvTableAdapter.ClearBeforeFill = true;
+            // 
+            // postaDataSet1
+            // 
+            this.postaDataSet1.DataSetName = "PostaDataSet1";
+            this.postaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dKGradoviBindingSource
+            // 
+            this.dKGradoviBindingSource.DataMember = "DK_Gradovi";
+            this.dKGradoviBindingSource.DataSource = this.postaDataSet1;
+            // 
+            // dK_GradoviTableAdapter
+            // 
+            this.dK_GradoviTableAdapter.ClearBeforeFill = true;
+            // 
+            // postaDataSet2
+            // 
+            this.postaDataSet2.DataSetName = "PostaDataSet2";
+            this.postaDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dKGradoviBindingSource1
+            // 
+            this.dKGradoviBindingSource1.DataMember = "DK_Gradovi";
+            this.dKGradoviBindingSource1.DataSource = this.postaDataSet2;
+            // 
+            // dK_GradoviTableAdapter1
+            // 
+            this.dK_GradoviTableAdapter1.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -143,16 +181,24 @@
             // polazisteDataGridViewTextBoxColumn
             // 
             this.polazisteDataGridViewTextBoxColumn.DataPropertyName = "Polaziste";
+            this.polazisteDataGridViewTextBoxColumn.DataSource = this.dKGradoviBindingSource;
+            this.polazisteDataGridViewTextBoxColumn.DisplayMember = "Naziv";
             this.polazisteDataGridViewTextBoxColumn.HeaderText = "Polaziste";
             this.polazisteDataGridViewTextBoxColumn.Name = "polazisteDataGridViewTextBoxColumn";
             this.polazisteDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.polazisteDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.polazisteDataGridViewTextBoxColumn.ValueMember = "Id";
             // 
             // odredisteDataGridViewTextBoxColumn
             // 
             this.odredisteDataGridViewTextBoxColumn.DataPropertyName = "Odrediste";
+            this.odredisteDataGridViewTextBoxColumn.DataSource = this.dKGradoviBindingSource1;
+            this.odredisteDataGridViewTextBoxColumn.DisplayMember = "Naziv";
             this.odredisteDataGridViewTextBoxColumn.HeaderText = "Odrediste";
             this.odredisteDataGridViewTextBoxColumn.Name = "odredisteDataGridViewTextBoxColumn";
             this.odredisteDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.odredisteDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.odredisteDataGridViewTextBoxColumn.ValueMember = "Id";
             // 
             // primateljDataGridViewTextBoxColumn
             // 
@@ -182,12 +228,16 @@
             this.Text = "Zaprimanje pošiljke";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosiljke)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dKPosiljkadgvBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postaDataSet)).EndInit();
             this.grbPosiljatelj.ResumeLayout(false);
             this.grbPosiljatelj.PerformLayout();
             this.grbPrimatelj.ResumeLayout(false);
             this.grbPrimatelj.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.postaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dKPosiljkadgvBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postaDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dKGradoviBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postaDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dKGradoviBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -203,10 +253,16 @@
         private PostaDataSet postaDataSet;
         private System.Windows.Forms.BindingSource dKPosiljkadgvBindingSource;
         private PostaDataSetTableAdapters.DK_Posiljka_dgvTableAdapter dK_Posiljka_dgvTableAdapter;
+        private PostaDataSet1 postaDataSet1;
+        private System.Windows.Forms.BindingSource dKGradoviBindingSource;
+        private PostaDataSet1TableAdapters.DK_GradoviTableAdapter dK_GradoviTableAdapter;
+        private PostaDataSet2 postaDataSet2;
+        private System.Windows.Forms.BindingSource dKGradoviBindingSource1;
+        private PostaDataSet2TableAdapters.DK_GradoviTableAdapter dK_GradoviTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isporucenoDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn polazisteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn odredisteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn polazisteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn odredisteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn primateljDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn posiljateljDataGridViewTextBoxColumn;
     }
