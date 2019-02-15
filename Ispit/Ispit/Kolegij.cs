@@ -30,7 +30,16 @@ namespace Ispit
         }
         public List<Pitanje> DohvatiPitanja()
         {
-            return new List<Pitanje>();
+            List<Pitanje> listaPitanja = new List<Pitanje>();
+            string sqlUpit = "SELECT * FROM Pitanja WHERE IdKolegija=";
+            DbDataReader podaci = DB.Instance.DohvatiDataReader(sqlUpit);
+            while (podaci.Read())
+            {
+                Pitanje p = new Pitanje(podaci);
+                listaPitanja.Add(p);
+            }
+            podaci.Close();
+            return listaPitanja;
         }
     }
 }

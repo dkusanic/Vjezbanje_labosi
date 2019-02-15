@@ -14,12 +14,18 @@ namespace Ispit
         private void FrmIspit_Load(object sender, System.EventArgs e)
         {
             PrikaziKolegije();
+            PrikaziPitanja();
             Kolegij odabraniKolegij = dgvKolegiji.SelectedRows[0].DataBoundItem as Kolegij;
         }
         private void PrikaziKolegije()
         {
             List<Kolegij> listaK = Kolegij.DohvatiKolegije();
             dgvKolegiji.DataSource = listaK;
+        }
+        private void PrikaziPitanja()
+        {
+            Kolegij odabraniKolegij = dgvKolegiji.SelectedRows[0].DataBoundItem as Kolegij;            
+            dgvPitanja.DataSource = odabraniKolegij.DohvatiPitanja();
         }
     }
 }

@@ -36,17 +36,28 @@
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kolegijBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pitanjeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tekstDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brojBodovaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPitanja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKolegiji)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kolegijBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pitanjeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPitanja
             // 
             this.dgvPitanja.AllowUserToResizeColumns = false;
             this.dgvPitanja.AllowUserToResizeRows = false;
+            this.dgvPitanja.AutoGenerateColumns = false;
             this.dgvPitanja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPitanja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPitanja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.tekstDataGridViewTextBoxColumn,
+            this.brojBodovaDataGridViewTextBoxColumn});
+            this.dgvPitanja.DataSource = this.pitanjeBindingSource;
             this.dgvPitanja.Location = new System.Drawing.Point(11, 209);
             this.dgvPitanja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvPitanja.Name = "dgvPitanja";
@@ -116,6 +127,31 @@
             // 
             this.kolegijBindingSource.DataSource = typeof(Ispit.Kolegij);
             // 
+            // pitanjeBindingSource
+            // 
+            this.pitanjeBindingSource.DataSource = typeof(Ispit.Pitanje);
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // tekstDataGridViewTextBoxColumn
+            // 
+            this.tekstDataGridViewTextBoxColumn.DataPropertyName = "Tekst";
+            this.tekstDataGridViewTextBoxColumn.HeaderText = "Tekst";
+            this.tekstDataGridViewTextBoxColumn.Name = "tekstDataGridViewTextBoxColumn";
+            this.tekstDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // brojBodovaDataGridViewTextBoxColumn
+            // 
+            this.brojBodovaDataGridViewTextBoxColumn.DataPropertyName = "BrojBodova";
+            this.brojBodovaDataGridViewTextBoxColumn.HeaderText = "BrojBodova";
+            this.brojBodovaDataGridViewTextBoxColumn.Name = "brojBodovaDataGridViewTextBoxColumn";
+            this.brojBodovaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // FrmIspit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,6 +168,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPitanja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKolegiji)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kolegijBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pitanjeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,6 +183,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource kolegijBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tekstDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brojBodovaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource pitanjeBindingSource;
     }
 }
 

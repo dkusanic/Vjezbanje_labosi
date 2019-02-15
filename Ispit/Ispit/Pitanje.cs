@@ -9,7 +9,12 @@ namespace Ispit
         public float BrojBodova { get; set; }
         public Pitanje(DbDataReader podaci)
         {
-
+            if (podaci != null)
+            {
+                Id = int.Parse(podaci["Id"].ToString());
+                Tekst = podaci["Tekst"].ToString();
+                BrojBodova = float.Parse(podaci["BrojBodova"].ToString());
+            }
         }
     }
 }
