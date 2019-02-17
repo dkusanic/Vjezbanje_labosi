@@ -13,6 +13,7 @@ namespace Ispit
             {
                 Id = int.Parse(podaci["Id"].ToString());
                 Naziv = podaci["Naziv"].ToString();
+                //DohvatiPitanja();
             }
         }
         public static List<Kolegij> DohvatiKolegije()
@@ -31,7 +32,7 @@ namespace Ispit
         public List<Pitanje> DohvatiPitanja()
         {
             List<Pitanje> listaPitanja = new List<Pitanje>();
-            string sqlUpit = "SELECT * FROM Pitanja WHERE IdKolegija=";
+            string sqlUpit = "SELECT * FROM Pitanja WHERE IdKolegija=" + this.Id;
             DbDataReader podaci = DB.Instance.DohvatiDataReader(sqlUpit);
             while (podaci.Read())
             {

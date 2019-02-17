@@ -6,8 +6,10 @@ namespace Ispit
 {
     public partial class FrmIspit : Form
     {
+        Kolegij odabraniKolegij;
+        List<Kolegij> listaK = Kolegij.DohvatiKolegije();
         public FrmIspit()
-        {
+        {            
             InitializeComponent();
         }
 
@@ -15,17 +17,27 @@ namespace Ispit
         {
             PrikaziKolegije();
             PrikaziPitanja();
-            Kolegij odabraniKolegij = dgvKolegiji.SelectedRows[0].DataBoundItem as Kolegij;
+
+
         }
         private void PrikaziKolegije()
-        {
-            List<Kolegij> listaK = Kolegij.DohvatiKolegije();
+        {            
             dgvKolegiji.DataSource = listaK;
         }
         private void PrikaziPitanja()
         {
-            Kolegij odabraniKolegij = dgvKolegiji.SelectedRows[0].DataBoundItem as Kolegij;            
-            dgvPitanja.DataSource = odabraniKolegij.DohvatiPitanja();
+            foreach (Kolegij k in listaK)
+            {
+                if (odabraniKolegij.Id == k.Id)
+                    dgvPitanja.DataSource = k.DohvatiPitanja();
+
+            }
+        }
+
+        private void dgvKolegiji_SelectionChanged(object sender, System.EventArgs e)
+        {
+            odabraniKolegij = (Kolegij)dgvKolegiji.CurrentRow.DataBoundItem;
+            PrikaziPitanja();
         }
     }
 }

@@ -30,20 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvPitanja = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dgvKolegiji = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kolegijBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pitanjeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tekstDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brojBodovaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pitanjeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvKolegiji = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolegijBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPitanja)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pitanjeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKolegiji)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kolegijBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pitanjeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPitanja
@@ -59,7 +59,7 @@
             this.brojBodovaDataGridViewTextBoxColumn});
             this.dgvPitanja.DataSource = this.pitanjeBindingSource;
             this.dgvPitanja.Location = new System.Drawing.Point(11, 209);
-            this.dgvPitanja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPitanja.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPitanja.Name = "dgvPitanja";
             this.dgvPitanja.ReadOnly = true;
             this.dgvPitanja.RowHeadersVisible = false;
@@ -67,6 +67,31 @@
             this.dgvPitanja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPitanja.Size = new System.Drawing.Size(528, 156);
             this.dgvPitanja.TabIndex = 0;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // tekstDataGridViewTextBoxColumn
+            // 
+            this.tekstDataGridViewTextBoxColumn.DataPropertyName = "Tekst";
+            this.tekstDataGridViewTextBoxColumn.HeaderText = "Tekst";
+            this.tekstDataGridViewTextBoxColumn.Name = "tekstDataGridViewTextBoxColumn";
+            this.tekstDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // brojBodovaDataGridViewTextBoxColumn
+            // 
+            this.brojBodovaDataGridViewTextBoxColumn.DataPropertyName = "BrojBodova";
+            this.brojBodovaDataGridViewTextBoxColumn.HeaderText = "BrojBodova";
+            this.brojBodovaDataGridViewTextBoxColumn.Name = "brojBodovaDataGridViewTextBoxColumn";
+            this.brojBodovaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pitanjeBindingSource
+            // 
+            this.pitanjeBindingSource.DataSource = typeof(Ispit.Pitanje);
             // 
             // label1
             // 
@@ -90,7 +115,7 @@
             this.nazivDataGridViewTextBoxColumn});
             this.dgvKolegiji.DataSource = this.kolegijBindingSource;
             this.dgvKolegiji.Location = new System.Drawing.Point(11, 24);
-            this.dgvKolegiji.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvKolegiji.Margin = new System.Windows.Forms.Padding(2);
             this.dgvKolegiji.Name = "dgvKolegiji";
             this.dgvKolegiji.ReadOnly = true;
             this.dgvKolegiji.RowHeadersVisible = false;
@@ -98,16 +123,7 @@
             this.dgvKolegiji.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKolegiji.Size = new System.Drawing.Size(528, 167);
             this.dgvKolegiji.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 7);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Kolegiji";
+            this.dgvKolegiji.SelectionChanged += new System.EventHandler(this.dgvKolegiji_SelectionChanged);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -127,30 +143,15 @@
             // 
             this.kolegijBindingSource.DataSource = typeof(Ispit.Kolegij);
             // 
-            // pitanjeBindingSource
+            // label2
             // 
-            this.pitanjeBindingSource.DataSource = typeof(Ispit.Pitanje);
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // tekstDataGridViewTextBoxColumn
-            // 
-            this.tekstDataGridViewTextBoxColumn.DataPropertyName = "Tekst";
-            this.tekstDataGridViewTextBoxColumn.HeaderText = "Tekst";
-            this.tekstDataGridViewTextBoxColumn.Name = "tekstDataGridViewTextBoxColumn";
-            this.tekstDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // brojBodovaDataGridViewTextBoxColumn
-            // 
-            this.brojBodovaDataGridViewTextBoxColumn.DataPropertyName = "BrojBodova";
-            this.brojBodovaDataGridViewTextBoxColumn.HeaderText = "BrojBodova";
-            this.brojBodovaDataGridViewTextBoxColumn.Name = "brojBodovaDataGridViewTextBoxColumn";
-            this.brojBodovaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 7);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Kolegiji";
             // 
             // FrmIspit
             // 
@@ -161,14 +162,14 @@
             this.Controls.Add(this.dgvKolegiji);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvPitanja);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmIspit";
             this.Text = "Baza ispitnih pitanja";
             this.Load += new System.EventHandler(this.FrmIspit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPitanja)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pitanjeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKolegiji)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kolegijBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pitanjeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
